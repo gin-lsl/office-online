@@ -7,7 +7,7 @@ import { CommonModule } from "./common/common.module";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     CommonModule,

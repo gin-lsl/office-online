@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Point } from '../../common/interface/point';
+import { Point } from '../../../common/interface/point';
 
 /**
  * excel 的一页
