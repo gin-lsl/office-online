@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+*, *:after, *:before {
+  padding: 0;
+  margin: 0;
+}
+html, body {
+  font-family: Arial, 微软雅黑, Microsoft YaHei, Helvetica, sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}

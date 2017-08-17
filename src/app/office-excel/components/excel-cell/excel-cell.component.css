@@ -1,0 +1,10 @@
+:host {
+  display: inline-block;
+  vertical-align: bottom;
+  border-right: 1px solid #D4D4D4;
+  border-bottom: 1px solid #D4D4D4;
+}
+:host(.focus) {
+  background-color: azure;
+  border: 2px solid #217346;
+}

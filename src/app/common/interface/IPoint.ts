@@ -1,7 +1,7 @@
 /**
  * 坐标
  */
-export interface Point {
+export interface IPoint {
   /**
    * 横坐标
    */

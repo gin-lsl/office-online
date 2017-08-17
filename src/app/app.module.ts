@@ -4,6 +4,7 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { CommonModule } from "./common/common.module";
+import { OfficeExcelModule } from './office-excel/office-excel.module';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { CommonModule } from "./common/common.module";
   ],
   imports: [
     CommonModule,
+    OfficeExcelModule,
     BrowserModule,
     HttpClientModule,
   ],

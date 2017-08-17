@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-
-import 'rxjs'
 
 @Component({
   selector: 'app-root',
@@ -11,6 +8,7 @@ import 'rxjs'
 export class AppComponent {
   title = 'app';
 
-  constructor(httpClient: HttpClient) {
+  constructor() {
   }
+
 }

@@ -1,3 +1,10 @@
-<p>
-  sheet works!
-</p>
+<div>
+  <div class="excel__cellRow"
+       *ngFor='let _excelCell2D of excelCell2D; let _iRow = index'>
+    <app-excel-cell *ngFor='let __excelCell2D of _excelCell2D; let _iColumn = index'
+                    (focusEvent)="handleExcelCellFocus($event)"
+                    indexRow="{{ _iRow }}"
+                    indexColumn="{{ _iColumn }}">
+    </app-excel-cell>
+  </div>
+</div>

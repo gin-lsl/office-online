@@ -3,3 +3,6 @@
   border: 1px solid lightgreen;
   overflow: hidden;
 }
+:host(.focus) {
+  background-color: azure;
+}

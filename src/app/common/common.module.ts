@@ -3,6 +3,8 @@ import { CommonModule as AngularCommonModule } from '@angular/common';
 
 import { CellComponent } from "./components/cell/cell.component";
 
+import { GlobalFocusServiceService } from './services/global-focus-service.service';
+
 @NgModule({
   imports: [
     AngularCommonModule
@@ -12,6 +14,9 @@ import { CellComponent } from "./components/cell/cell.component";
   ],
   exports: [
     CellComponent,
+  ],
+  providers: [
+    GlobalFocusServiceService
   ]
 })
 export class CommonModule { }
