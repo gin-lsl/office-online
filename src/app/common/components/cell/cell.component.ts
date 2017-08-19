@@ -31,7 +31,7 @@ export class CellComponent implements OnInit {
   }
 
   @HostListener('mousedown')
-  handleFocus(): void {
+  protected handleFocus(): void {
     this.isFocus = !this.isFocus;
     this._globalFocusServiceService.emitFocusChange({ row: 0, column: 0 })
   }

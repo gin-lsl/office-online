@@ -1,2 +1,4 @@
-.excel__cellRow {
+.sheet-inner,
+app-excel-cell {
+  position: relative;
 }
