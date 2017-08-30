@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
-import { CellComponent } from '../../../common';
-import { ISite } from '../../../common';
+
+import { CellComponent, ISite, Ruler } from '../../../core';
 
 @Component({
   selector: 'app-sheet-top-ruler-cell',
@@ -9,7 +9,8 @@ import { ISite } from '../../../common';
 })
 export class SheetTopRulerCellComponent extends CellComponent implements OnInit {
 
-  @Input() private indexColumn: number = 0;
+  @Input() private indexColumn = 0;
+  @Input() private ruler: Ruler;
 
   ngOnInit() {
     this.height = 20;
@@ -18,7 +19,8 @@ export class SheetTopRulerCellComponent extends CellComponent implements OnInit 
 
   @HostListener('mousedown')
   protected handleFocus(): void {
-    this._globalFocusServiceService.emitFocusChange({ type: 'sheetTopRuler', site: { row: 0, column: this.indexColumn } } as { type: string, site: ISite })
+    this._globalFocusServiceService
+      .emitFocusChange({ type: 'sheetTopRuler', site: { row: 0, column: this.indexColumn } } as { type: string, site: ISite });
   }
 
 }

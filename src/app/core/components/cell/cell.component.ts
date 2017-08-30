@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, HostListener, HostBinding, Output, EventEmitter } from '@angular/core';
-import { IPoint } from '../../';
-import { GlobalFocusServiceService } from '../../';
+import { IPoint, GlobalFocusServiceService, IFocusSubject, FocusSubjectTypeEnum } from '../../';
 
 /**
  * 基础方格组件
@@ -12,13 +11,13 @@ import { GlobalFocusServiceService } from '../../';
 })
 export class CellComponent implements OnInit {
 
-  @HostBinding('style.height.px') protected height: number = 30;
+  @HostBinding('style.height.px') protected height = 30;
 
-  @HostBinding('style.width.px') protected width: number = 70;
+  @HostBinding('style.width.px') protected width = 70;
 
-  @HostBinding('class.selected') protected isSelected: boolean = false;
+  @HostBinding('class.selected') protected isSelected = false;
 
-  @HostBinding('class.focus') protected isFocus: boolean = false;
+  @HostBinding('class.focus') protected isFocus = false;
 
   @Output() protected focusEvent: EventEmitter<any> = new EventEmitter<any>();
 
@@ -28,6 +27,12 @@ export class CellComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._globalFocusServiceService
+      .focusSubject$()
+      .filter((_: IFocusSubject) => _.type === FocusSubjectTypeEnum.FromSheetCell)
+      .subscribe((_: IFocusSubject) => {
+        console.log(_)
+      })
   }
 
   @HostListener('mousedown')

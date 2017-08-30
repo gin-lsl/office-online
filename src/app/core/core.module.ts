@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule as AngularCommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 import { CellComponent } from "./components/cell/cell.component";
 
@@ -7,7 +7,7 @@ import { GlobalFocusServiceService } from './services/global-focus-service.servi
 
 @NgModule({
   imports: [
-    AngularCommonModule
+    CommonModule
   ],
   declarations: [
     CellComponent
@@ -19,4 +19,4 @@ import { GlobalFocusServiceService } from './services/global-focus-service.servi
     GlobalFocusServiceService
   ]
 })
-export class CommonModule { }
+export class CoreModule { }

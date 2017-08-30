@@ -1,6 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, Input, HostListener } from '@angular/core';
-import { CellComponent } from "../../../common";
-import { ISite } from '../../../common/interface/ISite';
+import { CellComponent, ISite } from '../../../core';
 
 @Component({
   selector: 'app-excel-cell',
@@ -9,9 +8,9 @@ import { ISite } from '../../../common/interface/ISite';
 })
 export class ExcelCellComponent extends CellComponent implements OnInit {
 
-  @Input() private indexRow: number = 0;
+  @Input() private indexRow = 0;
 
-  @Input() private indexColumn: number = 0;
+  @Input() private indexColumn = 0;
 
   @Output() protected focusEvent: EventEmitter<ISite> = new EventEmitter<ISite>();
 
@@ -23,7 +22,7 @@ export class ExcelCellComponent extends CellComponent implements OnInit {
   @HostListener('mousedown')
   handleFocus(): void {
     this.isFocus = !this.isFocus;
-    this._globalFocusServiceService.emitFocusChange({ row: this.indexRow, column: this.indexColumn })
+    this._globalFocusServiceService.emitFocusChange({ row: this.indexRow, column: this.indexColumn });
   }
 
 }
